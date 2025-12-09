@@ -1,7 +1,7 @@
 # MCP Marketplace Extraction - Remaining Steps
 
-**Status:** Phases 1-5 Complete ✅  
-**Next:** Complete Phases 6-13 to finish open source setup
+**Status:** Phases 1-9 Complete ✅  
+**Next:** Complete Phases 10-13 to finish open source setup
 
 ---
 
@@ -80,6 +80,11 @@ npm run build
 Check that `dist/` folders are created in both packages:
 - `packages/types/dist/` should contain compiled JS and .d.ts files
 - `packages/marketplace-client/dist/` should contain compiled JS and .d.ts files
+
+**Note:** If you encounter TypeScript errors about missing 'node' types, install `@types/node` as a dev dependency in the marketplace-client package:
+```bash
+cd packages/marketplace-client && npm install --save-dev @types/node
+```
 
 ### Step 8.4: Test Locally (Optional)
 ```bash
@@ -242,10 +247,10 @@ git push origin v1.0.0
 
 ## Quick Checklist
 
-- [ ] Phase 6: Create all README, LICENSE, .npmignore, .gitignore files
-- [ ] Phase 7: Setup GitHub Actions CI/CD workflows
-- [ ] Phase 8: Build and test locally
-- [ ] Phase 9: Initial commit and push to GitHub
+- [x] Phase 6: Create all README, LICENSE, .npmignore, .gitignore files ✅
+- [x] Phase 7: Setup GitHub Actions CI/CD workflows ✅
+- [x] Phase 8: Build and test locally ✅
+- [x] Phase 9: Initial commit and push to GitHub ✅ (Note: Commit created, push requires user action)
 - [ ] Phase 10: Publish both packages to npm
 - [ ] Phase 11: Setup GitHub secrets for automated publishing
 - [ ] Phase 12: Update monorepo to use published packages
@@ -291,5 +296,11 @@ git push origin v1.0.0
 
 ---
 
-**Last Updated:** After Phase 5 completion
+**Last Updated:** After Phase 9 completion
+
+**Note:** Phase 9 commit has been created. To push to GitHub, run:
+```bash
+git push -u origin main
+```
+(Only if remote is already configured, otherwise follow Step 9.2 to add remote first)
 
