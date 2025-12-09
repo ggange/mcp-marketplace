@@ -1,0 +1,25 @@
+{
+  "name": "mcp-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCP Marketplace Client SDK - TypeScript SDK for MCP App Marketplace",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "test": "npm run test --workspaces",
+    "publish:types": "npm publish --workspace=packages/types",
+    "publish:client": "npm publish --workspace=packages/marketplace-client",
+    "publish:all": "npm run publish:types && npm run publish:client"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ggange/mcp-marketplace.git"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@mcp-marketplace/client-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for accessing the MCP App Marketplace API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "marketplace",
+    "sdk",
+    "typescript",
+    "api-client"
+  ],
+  "author": "Giuseppe Matteo Gangemi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ggange/mcp-marketplace.git",
+    "directory": "packages/marketplace-client"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@mcp-marketplace/types": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.2",
+    "typescript": "^5.3.3"
+  }
+}

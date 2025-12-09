@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Verify build artifacts
+        run: |
+          if [ ! -d "packages/types/dist" ]; then
+            echo "Error: packages/types/dist not found"
+            exit 1
+          fi
+          if [ ! -d "packages/marketplace-client/dist" ]; then
+            echo "Error: packages/marketplace-client/dist not found"
+            exit 1
+          fi
+          echo "Build artifacts verified successfully"
+
+      - name: Check for modified build artifacts
+        run: |
+          git diff --exit-code || (echo "Error: Build artifacts were modified" && exit 1)
+
