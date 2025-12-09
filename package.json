@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces",
+    "build": "npm run build --workspace=packages/types && npm run build --workspace=packages/marketplace-client",
     "dev": "npm run dev --workspaces",
     "test": "npm run test --workspaces || true",
     "publish:types": "npm publish --workspace=packages/types --access public",
