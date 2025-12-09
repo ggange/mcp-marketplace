@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -13,8 +14,9 @@
   },
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf dist",
     "dev": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "files": [
     "dist",
@@ -33,6 +35,10 @@
     "type": "git",
     "url": "https://github.com/ggange/mcp-marketplace.git",
     "directory": "packages/types"
+  },
+  "homepage": "https://github.com/ggange/mcp-marketplace#readme",
+  "bugs": {
+    "url": "https://github.com/ggange/mcp-marketplace/issues"
   },
   "publishConfig": {
     "access": "public",

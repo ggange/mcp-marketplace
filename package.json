@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "npm run build --workspace=packages/types && npm run build --workspace=packages/marketplace-client",
+    "clean": "npm run clean --workspaces",
     "dev": "npm run dev --workspaces",
     "test": "npm run test --workspaces || true",
     "publish:types": "npm publish --workspace=packages/types --access public",
@@ -24,6 +25,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ggange/mcp-marketplace.git"
+  },
+  "homepage": "https://github.com/ggange/mcp-marketplace#readme",
+  "bugs": {
+    "url": "https://github.com/ggange/mcp-marketplace/issues"
   },
   "license": "MIT",
   "author": "Giuseppe Matteo Gangemi",
