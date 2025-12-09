@@ -1,7 +1,5 @@
-src/
-tsconfig.json
-*.tsbuildinfo
-node_modules/
+packages/
+.github/
 .git/
 .gitignore
 .env*
@@ -20,3 +18,5 @@ coverage/
 .npm
 .eslintcache
 .turbo
+MCP_MARKETPLACE_EXTRACTION_REMAINING_STEPS.md
+

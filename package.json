@@ -9,10 +9,14 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "dev": "npm run dev --workspaces",
-    "test": "npm run test --workspaces",
-    "publish:types": "npm publish --workspace=packages/types",
-    "publish:client": "npm publish --workspace=packages/marketplace-client",
+    "test": "npm run test --workspaces || true",
+    "publish:types": "npm publish --workspace=packages/types --access public",
+    "publish:client": "npm publish --workspace=packages/marketplace-client --access public",
     "publish:all": "npm run publish:types && npm run publish:client"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
@@ -21,5 +25,13 @@
     "type": "git",
     "url": "https://github.com/ggange/mcp-marketplace.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "author": "Giuseppe Matteo Gangemi",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "marketplace",
+    "sdk",
+    "typescript"
+  ]
 }

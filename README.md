@@ -109,6 +109,25 @@ npm run dev
 
 Runs TypeScript compiler in watch mode for all packages.
 
+## Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes and run `npm run build` to verify
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+### Running Tests
+
+```bash
+npm run test
+```
+
 ## License
 
 MIT License - see [LICENSE](./LICENSE) file for details.
@@ -117,6 +136,10 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 - GitHub: [https://github.com/ggange/mcp-marketplace](https://github.com/ggange/mcp-marketplace)
 - npm: [@mcp-marketplace/types](https://www.npmjs.com/package/@mcp-marketplace/types) | [@mcp-marketplace/client-sdk](https://www.npmjs.com/package/@mcp-marketplace/client-sdk)
+
+## Support
+
+For issues and questions, please use the [GitHub Issues](https://github.com/ggange/mcp-marketplace/issues) page.
 
 ## Author
 

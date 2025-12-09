@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,7 +46,10 @@ jobs:
           fi
           echo "Build artifacts verified successfully"
 
-      - name: Check for modified build artifacts
+      - name: Check for uncommitted changes
         run: |
-          git diff --exit-code || (echo "Error: Build artifacts were modified" && exit 1)
+          if ! git diff --exit-code; then
+            echo "Error: Build artifacts have changed. Ensure dist files are generated locally and committed."
+            exit 1
+          fi
 

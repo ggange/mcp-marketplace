@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
 
@@ -27,6 +27,17 @@ jobs:
 
       - name: Build all packages
         run: npm run build
+
+      - name: Verify build artifacts
+        run: |
+          if [ ! -d "packages/types/dist" ]; then
+            echo "Error: packages/types/dist not found"
+            exit 1
+          fi
+          if [ ! -d "packages/marketplace-client/dist" ]; then
+            echo "Error: packages/marketplace-client/dist not found"
+            exit 1
+          fi
 
       - name: Publish @mcp-marketplace/types
         working-directory: ./packages/types
