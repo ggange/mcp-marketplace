@@ -12,8 +12,7 @@ updates:
       - dependency-type: "production"
       - dependency-type: "development"
     commit-message:
-      prefix: "chore"
-      prefix-scope: "deps"
+      prefix: "chore(deps)"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
